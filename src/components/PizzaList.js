@@ -26,29 +26,25 @@ const PizzaStyles = styled.div`
 `;
 function SinglePizzaFunction({ pizza }) {
   return (
-    <div>
-      <PizzaStyles>
-        <Link to={`/pizza/${pizza.slug.current}`}>
-          <h2>
-            <span className="mark">{pizza.name}</span>
-          </h2>
-          <p>{pizza.toppings.map((topping) => topping.name).join(',')}</p>
-          <Img fluid={pizza.image.asset.fluid} alt={pizza.name} />
-        </Link>
-      </PizzaStyles>
-    </div>
+    <PizzaStyles>
+      <Link to={`/pizza/${pizza.slug.current}`}>
+        <h2>
+          <span className="mark">{pizza.name}</span>
+        </h2>
+      </Link>
+      <p>{pizza.toppings.map((topping) => topping.name).join(',')}</p>
+      <Img fluid={pizza.image.asset.fluid} alt={pizza.name} />
+    </PizzaStyles>
   );
 }
 
 function PizzaList({ pizzaDetails }) {
   return (
-    <div>
-      <PizzaGridStyles>
-        {pizzaDetails.map((pizza) => (
-          <SinglePizzaFunction pizza={pizza} key={pizza.id} />
-        ))}
-      </PizzaGridStyles>
-    </div>
+    <PizzaGridStyles>
+      {pizzaDetails.map((pizza) => (
+        <SinglePizzaFunction pizza={pizza} key={pizza.id} />
+      ))}
+    </PizzaGridStyles>
   );
 }
 
