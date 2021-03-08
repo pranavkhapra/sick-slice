@@ -2,10 +2,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PizzaList from '../components/PizzaList';
+import ToppingFilter from '../components/ToppingFilter';
 
 function pizzas(props) {
   return (
     <>
+      <ToppingFilter />
       <PizzaList pizzaDetails={props.data.pizzas.nodes} />
     </>
   );
