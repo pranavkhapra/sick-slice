@@ -11,6 +11,7 @@ exports.components = {
   "component---src-pages-index-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/pages/index.js"))),
   "component---src-pages-order-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/pages/order.js"))),
   "component---src-pages-pizzas-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/pages/pizzas.js"))),
-  "component---src-pages-slicemasters-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/pages/slicemasters.js")))
+  "component---src-pages-slicemasters-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/pages/slicemasters.js"))),
+  "component---src-templates-pizza-js": hot(preferDefault(require("/home/just-a-random-person-to-ignore/Documents/gatsby-part/src/templates/Pizza.js")))
 }
 
