@@ -62,7 +62,7 @@ async function fetchBeersAndTurnIntoNodes({
   createContentDigest,
 }) {
   // 1.Fetch a list of the beer
-  const response = await fetch('https://api.sampleapis.com/beers/ale');
+  const response = await fetch('https://api.sampleapis.com/beers/stouts');
   const beers = await response.json();
   // 2.Loop over the list of beer
   beers.forEach((beer) => {
@@ -72,7 +72,7 @@ async function fetchBeersAndTurnIntoNodes({
       parent: null,
       children: [],
       internal: {
-        type: 'beer',
+        type: 'Beer',
         mediaType: 'application/json',
         contentDigest: createContentDigest(beer),
       },
