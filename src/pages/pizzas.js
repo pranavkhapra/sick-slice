@@ -7,7 +7,7 @@ import ToppingFilter from '../components/ToppingFilter';
 function pizzas(props) {
   return (
     <>
-      <ToppingFilter />
+      <ToppingFilter activeTopping={props.pageContext.topping} />
       <PizzaList pizzaDetails={props.data.pizzas.nodes} />
     </>
   );
