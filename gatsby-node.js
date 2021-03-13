@@ -29,6 +29,7 @@ async function turnPizzasIntoPages({ graphql, actions }) {
     });
   });
 }
+
 async function turnToppingsIntoPages({ graphql, actions }) {
   // 1.get a template for this page
   const toppingTemplate = path.resolve('./src/pages/pizzas.js');
