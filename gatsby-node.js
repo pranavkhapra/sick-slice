@@ -51,22 +51,19 @@ async function turnSliceMastersIntoPages({ graphql, actions }) {
   // how many slicemasters there are and how many per page
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
-  // 4.Loop from 1 to n where n and create pages for them
-  Array.from({ length: pageCount }).forEach(
-    (_,
-    (i) => {
-      actions.createPage({
-        path: `slicemasters/${i + 1}`,
-        component: path.resolve(`./src/pages/slicemasters.js`),
-        // this is data is passed to the template when we create it
-        context: {
-          skip: i * pageSize,
-          currentPage: i + 1,
-          pageSize,
-        },
-      });
-    })
-  );
+  // 4.Loop from 1 to n where n and create pages for them pagination one
+  Array.from({ length: pageCount }).forEach((_, i) => {
+    actions.createPage({
+      path: `/slicemasters/${i + 1}`,
+      component: path.resolve(`./src/pages/slicemasters.js`),
+      // this is data is passed to the template when we create it
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+      },
+    });
+  });
 }
 async function turnToppingsIntoPages({ graphql, actions }) {
   // 1.get a template for this page
