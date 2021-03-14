@@ -41,6 +41,7 @@ function slicemasters({ data }) {
   // console.log(slicemasters);
   return (
     <>
+      <p>{process.env.GATSBY_PAGE_SIZE}</p>
       <SlicemasterGrid>
         {slicemasterPerson.map((person) => (
           <SlicemasterStyles key={person.id}>
