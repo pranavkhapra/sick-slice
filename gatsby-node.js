@@ -45,8 +45,19 @@ async function turnSliceMastersIntoPages({ graphql, actions }) {
       }
     }
   `);
-  // TODO:2. Turn each slicemaster into their owwn page
 
+  // TODO:2. Turn each slicemaster into their owwn page
+  const sliceMasterTemplate = path.resolve('./src/templates/SliceMaster.js');
+  data.slicemasters.nodes.forEach((slicemaster) => {
+    actions.createPage({
+      path: `slicemaster/${slicemaster.slug.current}`,
+      component: sliceMasterTemplate,
+      context: {
+        name: slicemaster.person,
+        slug: slicemaster.slug.current,
+      },
+    });
+  });
   // 3.Figure out how many pages there are based on  and
   // how many slicemasters there are and how many per page
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
