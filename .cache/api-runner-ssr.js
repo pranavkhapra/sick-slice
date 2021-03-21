@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
