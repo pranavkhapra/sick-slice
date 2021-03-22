@@ -36,6 +36,7 @@ export const query = graphql`
           id
           name
         }
+        price
         image {
           asset {
             fluid(maxWidth: 400) {

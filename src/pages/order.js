@@ -4,6 +4,8 @@ import React from 'react';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
+import calculatePizzaPrice from '../utils/calculatePizzaPrice';
+import formatPrice from '../utils/formatPrice';
 
 function order({ data }) {
   const { values, updateValues } = useForm({
@@ -48,7 +50,10 @@ function order({ data }) {
               </div>
               <div>
                 {['S', 'M', 'L'].map((size) => (
-                  <button type="button">{size}</button>
+                  <button type="button">
+                    {size}
+                    {formatPrice(calculatePizzaPrice(pizza.price, size))}
+                  </button>
                 ))}
               </div>
             </div>
@@ -77,6 +82,7 @@ export const query = graphql`
           id
           name
         }
+        price
         image {
           asset {
             fluid(maxWidth: 400) {
