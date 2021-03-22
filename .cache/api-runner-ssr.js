@@ -1,14 +1,14 @@
 var plugins = [{
-      plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/home/just-a-random-person-to-ignore/Documents/sick-slice/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/home/just-a-random-person-to-ignore/Documents/sick-slice/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      plugin: require('/home/just-a-random-person-to-ignore/Documents/sick-slice/node_modules/gatsby-source-sanity/gatsby-ssr'),
       options: {"plugins":[],"projectId":"h9flzm0p","dataset":"production","watchMode":true,"token":"sktnWKHOo7HOCRVFLuk56I53IPwRjDUnLJq4gE2i6q0KwiExwgMa52a2gvzVtJAoBFBKQZXqSe7VZPtW0CN392EGbLv65WgQj2sOwbbxzCHg2RfWouMnaP2vPYsODR1pNKOozcANuqFhwj7rdhQz6MLDVuF6j3Ph6MCyNYxwydIa4dDTZ7sy"},
     },{
-      plugin: require('/home/just-a-random-person-to-ignore/Documents/gatsby-part/gatsby-ssr'),
+      plugin: require('/home/just-a-random-person-to-ignore/Documents/sick-slice/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

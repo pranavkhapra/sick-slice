@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env' });
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Slick Slices`,
+    title: ` Slick Slices pranavkhapra`,
     siteUrl: `https://gatbsy.pizza.pranavkhapra`,
     description: `The best Pizza in ....pizzas are always the best`,
     twitter: '@pranavkhapra',

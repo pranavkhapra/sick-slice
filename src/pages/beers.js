@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const BeerGridStyles = styled.div`
   display: grid;
@@ -26,6 +27,8 @@ function beers({ data }) {
   // console.log(data.beers.nodes);
   return (
     <>
+      <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} />
+
       <h2 className="center">
         We have like a {data.beers.nodes.length} beers in our store(wells its an
         API a secret)

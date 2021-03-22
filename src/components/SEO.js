@@ -15,6 +15,7 @@ export default function SEO({ children, location, description, title, image }) {
     }
   `);
   return (
+    // basically what it does it appends the titleTemplate after the title of that page or component
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
       <title>{title}</title>
@@ -30,7 +31,7 @@ export default function SEO({ children, location, description, title, image }) {
       <meta property="og:image" content={image || '/logo.svg'} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
-        propery="og:site_name"
+        property="og:site_name"
         content={site.siteMetadata.title}
         key="ogsitename"
       />
