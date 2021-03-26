@@ -1,0 +1,14 @@
+{
+  "name": "placeorder",
+  "version": "1.0.0",
+  "description": "basically the package.json for the serverless function i created for hooking up to and external email service for placing the order",
+  "main": "placeOrder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.5.0"
+  }
+}
