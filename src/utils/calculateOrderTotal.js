@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import calculatePizzaPrice from './calculatePizzaPrice';
 
 export default function calculateOrderTotal(order, pizzas) {
