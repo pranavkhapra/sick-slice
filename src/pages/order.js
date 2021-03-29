@@ -19,14 +19,14 @@ function orderPage({ data }) {
     name: '',
     email: '',
   });
-  const { order, addToOrder, removeFromOrder } = usePizza({
+  const { order, addToOrder, removeFromOrder,error,loading,message,submitOrder } = usePizza({
     pizzas,
     values,
   });
   return (
     <>
       <SEO title="Order a Pizza" />
-      <OrderStyles>
+      <OrderStyles onSubmit={submitOrder}>
         <fieldset>
           <legend>Your Info</legend>
           <label htmlFor="name">Name</label>
@@ -84,7 +84,7 @@ function orderPage({ data }) {
           <h3>
             Your Total is {formatPrice(calculateOrderTotal(order, pizzas))}
           </h3>
-          <button type="submit">Order Ahead</button>
+          <button type="submit"disabled={loading}>{loading ? 'Placing Order ...' : 'Order Ahead'}</button>
         </fieldset>
       </OrderStyles>
     </>
