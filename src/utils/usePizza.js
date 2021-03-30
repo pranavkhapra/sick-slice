@@ -31,9 +31,9 @@ export default function usePizza({ pizzas, values }) {
   /// runs when someone submit the form
   async function submitOrder(event) {
     event.preventDefault();
-    setLoading(true);
+    setLoading(null);
     setError(null);
-    setMessage(null);
+    setMessage('Go eat');
     // gather all the data of the order that we need to send
     const body = {
       order: attachNamesAndPrices(order, pizzas),
@@ -43,7 +43,7 @@ export default function usePizza({ pizzas, values }) {
     };
     // 4 send this data to a  serverless fucntion when they check out bascially the email stuff
     const res = await fetch(
-      `${process.env.GATSBY_SERVERLESS_BASE}/placeorder`,
+      `${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`,
       {
         method: 'POST',
         headers: {
@@ -53,7 +53,6 @@ export default function usePizza({ pizzas, values }) {
       }
     );
     const text = JSON.parse(await res.text());
-
     // check if everything worked
     if (res.status >= 400 && res.status < 600) {
       setLoading(false); // turn of the  loading
