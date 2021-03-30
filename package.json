@@ -16,7 +16,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "pranavkhapra"
+      "wesbos"
     ],
     "rules": {
       "react/prop-types": 0
