@@ -31,7 +31,7 @@ export default function usePizza({ pizzas, values }) {
   /// runs when someone submit the form
   async function submitOrder(event) {
     event.preventDefault();
-    setLoading(null);
+    setLoading(true);
     setError(null);
     // setMessage('Go eat');
     // gather all the data of the order that we need to send

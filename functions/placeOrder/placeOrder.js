@@ -43,7 +43,6 @@ function wait(ms = 0) {
 exports.handler = async (event, context) => {
   // check if data is coming from usePizza
   // bascially can be done by event.body
-  await wait(5000);
   const body = JSON.parse(event.body);
   // validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
@@ -58,7 +57,15 @@ exports.handler = async (event, context) => {
       };
     }
   }
-
+  // make sure they actually have items in that order
+  if (!body.order.length) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: `why would you order nothing`,
+      }),
+    };
+  }
   // send the email message
   const info = await transporter.sendMail({
     from: "Slick's Slices <slick@example.com>",
