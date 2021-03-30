@@ -34,9 +34,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+function wait(ms = 0) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 exports.handler = async (event, context) => {
   // check if data is coming from usePizza
   // bascially can be done by event.body
+  await wait(5000);
   const body = JSON.parse(event.body);
   // validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
