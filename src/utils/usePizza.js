@@ -40,6 +40,7 @@ export default function usePizza({ pizzas, values }) {
       total: formatPrice(calculateOrderTotal(order, pizzas)),
       name: values.name,
       email: values.email,
+      mapleSyrup: values.mapleSyrup,
     };
     // 4 send this data to a  serverless fucntion when they check out bascially the email stuff
     const res = await fetch(

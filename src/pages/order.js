@@ -18,6 +18,7 @@ function orderPage({ data }) {
   const { values, updateValues } = useForm({
     name: '',
     email: '',
+    mapleSyrup: '',
   });
   const {
     order,
@@ -53,6 +54,13 @@ function orderPage({ data }) {
             name="email"
             value={values.email}
             onChange={updateValues}
+          />
+          <input
+            type="mapleSyrup"
+            name="mapleSyrup"
+            value={values.mapleSyrup}
+            onChange={updateValues}
+            className="mapleSyrup"
           />
         </fieldset>
         <fieldset disabled={loading} className="menu">

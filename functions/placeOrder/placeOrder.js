@@ -1,3 +1,5 @@
+// serverside
+
 const nodemailer = require('nodemailer');
 
 function generateOrderEmail({ order, total }) {
@@ -44,6 +46,15 @@ exports.handler = async (event, context) => {
   // check if data is coming from usePizza
   // bascially can be done by event.body
   const body = JSON.parse(event.body);
+  // check if they have filled the maplesyrup
+  if (body.mapleSyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: 'Boop beepp bop zzsst good bye EEROORR CODE 34234',
+      }),
+    };
+  }
   // validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
   for (const field of requiredFields) {
