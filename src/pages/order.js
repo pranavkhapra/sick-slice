@@ -55,7 +55,7 @@ function orderPage({ data }) {
             onChange={updateValues}
           />
         </fieldset>
-        <fieldset disabled={loading}>
+        <fieldset disabled={loading} className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
             <MenuItemStyles key={pizza.id}>
@@ -83,7 +83,7 @@ function orderPage({ data }) {
             </MenuItemStyles>
           ))}
         </fieldset>
-        <fieldset disabled={loading}>
+        <fieldset disabled={loading} className="order">
           <legend>Order</legend>
           <PizzaOrder
             order={order}
