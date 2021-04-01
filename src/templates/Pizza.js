@@ -10,7 +10,7 @@ const PizzaGrid = styled.div`
 `;
 function pizzaDynamicPage({ data }) {
   const { pizza } = data;
-  console.log(pizza);
+  // console.log(pizza);
   return (
     <PizzaGrid>
       <Img fluid={pizza.image.asset.fluid} />
