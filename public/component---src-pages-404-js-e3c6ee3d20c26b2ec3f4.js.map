@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["notfound"],"mappings":"2FAAA,gCAMeA,UAJf,WACE,OAAO","file":"component---src-pages-404-js-e3c6ee3d20c26b2ec3f4.js","sourcesContent":["import React from 'react';\n\nfunction notfound() {\n  return <div>Hey - That page doesn't exist!!!</div>;\n}\n\nexport default notfound;\n"],"sourceRoot":""}
