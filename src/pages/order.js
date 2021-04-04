@@ -103,9 +103,14 @@ function orderPage({ data }) {
           <h3>
             Your Total is {formatPrice(calculateOrderTotal(order, pizzas))}
           </h3>
-          <div>{error ? <p>Error :{error}</p> : ''}</div>
+          <div aria-live="polite" aria-atomic="true">
+            {error ? <p>Error: {error}</p> : ''}
+          </div>
           <button type="submit" disabled={loading}>
-            {loading ? 'Placing Order ...' : 'Order Ahead'}
+            <span aria-live="assertive" aria-atomic="true">
+              {loading ? 'Placing Order...' : ''}
+            </span>
+            {loading ? '' : 'Order Ahead'}
           </button>
         </fieldset>
       </OrderStyles>

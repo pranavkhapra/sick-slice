@@ -46,7 +46,6 @@ const GlobalStyles = createGlobalStyle`
   body::-webkit-scrollbar {
     width: 12px;
   }
-
   html {
     scrollbar-width: thin;
     scrollbar-color: var(--red) var(--white);
