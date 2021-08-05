@@ -45,6 +45,7 @@ function orderPage({ data }) {
           <input
             type="text"
             name="name"
+            id="name"
             value={values.name}
             onChange={updateValues}
           />
@@ -52,12 +53,14 @@ function orderPage({ data }) {
           <input
             type="email"
             name="email"
+            id="email"
             value={values.email}
             onChange={updateValues}
           />
           <input
             type="mapleSyrup"
             name="mapleSyrup"
+            id="mapleSyrup"
             value={values.mapleSyrup}
             onChange={updateValues}
             className="mapleSyrup"
@@ -77,14 +80,18 @@ function orderPage({ data }) {
                 <h2>{pizza.name}</h2>
               </div>
               <div>
-                {['S', 'M', 'L'].map((size, index) => (
+                {['S', 'M', 'L'].map((size) => (
                   <button
-                    key={index}
                     type="button"
-                    onClick={() => addToOrder({ id: pizza.id, size })}
+                    key={size}
+                    onClick={() =>
+                      addToOrder({
+                        id: pizza.id,
+                        size,
+                      })
+                    }
                   >
-                    {size}
-                    {formatPrice(calculatePizzaPrice(pizza.price, size))}
+                    {size} {formatPrice(calculatePizzaPrice(pizza.price, size))}
                   </button>
                 ))}
               </div>
@@ -103,14 +110,9 @@ function orderPage({ data }) {
           <h3>
             Your Total is {formatPrice(calculateOrderTotal(order, pizzas))}
           </h3>
-          <div aria-live="polite" aria-atomic="true">
-            {error ? <p>Error: {error}</p> : ''}
-          </div>
+          <div>{error ? <p>Error: {error}</p> : ''}</div>
           <button type="submit" disabled={loading}>
-            <span aria-live="assertive" aria-atomic="true">
-              {loading ? 'Placing Order...' : ''}
-            </span>
-            {loading ? '' : 'Order Ahead'}
+            {loading ? 'Placing Order...' : 'Order Ahead'}
           </button>
         </fieldset>
       </OrderStyles>
