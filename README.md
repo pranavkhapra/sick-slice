@@ -9,7 +9,7 @@ For **Backend** used  **Sanity.io**(A headless CMS) for making admin managing in
 
 Used *Graphql* for getting the data from Sanity to Gatsby using queries. 
 
-Declared *serverless function* for completing the order by sending email of the order.
+Declared (Netlify)*serverless function* for completing the order by sending email of the order.
 
 Created *honey pot* to defend against bots.
 
